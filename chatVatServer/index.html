@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <head><title>Hello world</title></head>
+   
+   <body>
+    <h1 id="">chatVat</h1>
+    <br/>
+    <p>Your Sockect id: <span style="color: green;font-weight: 700" id="id"></span></p>
+    <p>Connection: <span style="color: blue;" id="Connection"></span></p>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+   <script>
+      var socket = io();
+      console.log(socket)
+      setTimeout(() => {
+          document.getElementById('id').innerText = socket?.id
+          document.getElementById('Connection').innerText = socket?.connected
+      }, 1000);
+    //   socket.on('testerEvent', function(data){document.write(data.description)});
+   </script>
+    </body>
+</html>
